@@ -43,7 +43,7 @@ return {
 		},
 		{ "<leader>fB", "<cmd>Telescope buffers<cr>", desc = "Buffers (all)" },
 		{ "<leader>fc", LazyVim.pick.config_files(), desc = "Find Config File" },
-		{ "<leader>f", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+		-- { "<leader>f", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
 		{ "<leader>fF", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
 		{ "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Files (git-files)" },
 		{ "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
@@ -156,6 +156,8 @@ return {
 						["<C-Up>"] = actions.cycle_history_prev,
 						["<C-f>"] = actions.preview_scrolling_down,
 						["<C-b>"] = actions.preview_scrolling_up,
+						["<Down>"] = actions.move_selection_previous,
+						["<Up>"] = actions.move_selection_next,
 					},
 					n = {
 						["q"] = actions.close,
