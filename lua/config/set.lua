@@ -16,6 +16,22 @@ vim.api.nvim_create_user_command("FindFiles", function()
 	require("telescope.builtin").find_files()
 end, {})
 
+vim.api.nvim_create_user_command("FindFilesRootDir", function()
+	local builtin = require("telescope.builtin")
+
+	local function git_root()
+		local root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+		if vim.v.shell_error ~= 0 then
+			return vim.loop.cwd()
+		end
+		return root
+	end
+
+	builtin.find_files({
+		cwd = git_root(),
+	})
+end, {})
+
 vim.api.nvim_create_user_command("GlobalSearch", function()
 	local input_string = vim.fn.input("Search For > ")
 	if input_string == "" then
