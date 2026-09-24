@@ -11,7 +11,6 @@ vim.keymap.set("n", "<leader>f", ":FindFiles<CR>")
 vim.keymap.set("n", "<leader>F", ":FindFilesRootDir<CR>")
 
 vim.keymap.set("n", "<leader>s", ":Telescope lsp_document_symbols<CR>")
-
 -- Source - https://stackoverflow.com/a/74584098
 -- Posted by Brotify Force, modified by community. See post 'Timeline' for change history
 -- Retrieved 2026-04-08, License - CC BY-SA 4.0
